@@ -8,29 +8,29 @@ The toolkit contains the following elements for integrating Google Analytics dat
 
 ### Custom Settings
 
-Site Metric Settings - login and table for Google Analytics
+* Site Metric Settings - login and table for Google Analytics
 
 ### Custom Objects
 
-Site Metric Date - date range or single date for a Site Metric
-Site Metric - a standard metric           
-Site Event - a custom event        
+* Site Metric Date - date range or single date for a Site Metric
+* Site Metric - a standard metric           
+* Site Event - a custom event        
 
 ### Classes
 
-GoogleAnalytics - methods to login, request, and parse analytics data into temporary Entry objects  
-ImportGoogleAnalytics - sample import code; requires creation of Site Metric Settings
+* GoogleAnalytics - methods to login, request, and parse analytics data into temporary Entry objects  
+* ImportGoogleAnalytics - sample import code; requires creation of Site Metric Settings
 
 ### Triggers
 
-SiteMetric_Time - populate human-readable time field for select metrics (ie. Average Time on Site)     
+* SiteMetric_Time - populate human-readable time field for select metrics (ie. Average Time on Site)     
 
 Setup
 -----
 
-# In Setup > Security Controls > Remote Site Settings, add the site https://www.google.com
-# In Setup > Develop > Custom Settings, select Manage next to Site Metric Settings and enter your Google Analytics email and password   
-## To find the Table Id for your site, you can use the [Google Analytics Data Feed Query Explorer](http://code.google.com/apis/analytics/docs/gdata/gdataExplorer.html)  
+1. In Setup > Security Controls > Remote Site Settings, add the site https://www.google.com
+2. In Setup > Develop > Custom Settings, select Manage next to Site Metric Settings and enter your Google Analytics email and password   
+3. To find the Table Id for your site, you can use the [Google Analytics Data Feed Query Explorer](http://code.google.com/apis/analytics/docs/gdata/gdataExplorer.html)  
 
 Run Samples
 -----------
