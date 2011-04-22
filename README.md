@@ -1,6 +1,8 @@
 Force.com Toolkit for Google Analytics
 ======================================  
 
+For an easy, 1-click installation, please see [Force.com Toolkit for Google Analytics on Code Share](http://developer.force.com/codeshare/project/forcecom-toolkit-for-google-analytics).
+
 Files
 -----
 
@@ -44,5 +46,12 @@ In the System Log, execute one of the following commands:
 where name is a string with the name of the Custom Settings you created in Setup.   
 
 The result should be a series of Site Metric Date, Site Metric, and Site Event records.
-You may need to adjust the dates in ImportGoogleAnalytics to match activity dates for your site.
+You may need to adjust the dates in ImportGoogleAnalytics to match activity dates for your site.    
+
+References
+----------   
+
+* [Data Export API - Getting Started - Google Analytics](http://code.google.com/apis/analytics/docs/gdata/gdataDeveloperGuide.html)
+* [Dimensions & Metrics Reference - Google Analytics](http://code.google.com/apis/analytics/docs/gdata/gdataReferenceDimensionsMetrics.html)
+* [Event Tracking Guide - Google Analytics](http://code.google.com/apis/analytics/docs/tracking/eventTrackerGuide.html)
 
