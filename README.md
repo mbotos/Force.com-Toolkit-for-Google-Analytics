@@ -1,7 +1,8 @@
 Force.com Toolkit for Google Analytics
 ======================================  
 
-For an easy, 1-click installation, please see [Force.com Toolkit for Google Analytics on Code Share](http://developer.force.com/codeshare/project/forcecom-toolkit-for-google-analytics).
+For an easy, 1-click installation: [Force.com Toolkit for Google Analytics on Code Share](http://developer.force.com/codeshare/project/forcecom-toolkit-for-google-analytics).
+To use the source code with a Salesforce org: [How To Use Github and the Force.com IDE](http://blog.sforce.com/sforce/2011/04/how-to-use-git-github-force-com-ide-open-source-labs-apps.html)
 
 Files
 -----
