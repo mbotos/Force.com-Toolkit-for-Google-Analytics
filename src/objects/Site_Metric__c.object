@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Single analytic metric for a Force.com site</description>
+    <enableActivities>false</enableActivities>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Display_Value__c</fullName>
+        <description>Alternate value to display in reports (ie. Time in minutes for Average Time on Site instead of seconds in Value)</description>
+        <externalId>false</externalId>
+        <label>Display Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Metric__c</fullName>
+        <description>Metric name from external system (ie Google Analytics)</description>
+        <externalId>false</externalId>
+        <label>Metric</label>
+        <picklist>
+            <picklistValues>
+                <fullName>ga:avgTimeOnSite</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ga:pageviewsPerVisit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ga:percentNewVisits</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ga:visitBounceRate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ga:visitLength</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ga:visitors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>mediaCodeConversion</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>medicalInquirySource</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>sampleRequestPDF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>sampleRequestSource</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>savingsRequestSource</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Site_Metric_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Site Metric Date</label>
+        <referenceTo>Site_Metric_Date__c</referenceTo>
+        <relationshipLabel>Site Metrics</relationshipLabel>
+        <relationshipName>Site_Metrics</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Time__c</fullName>
+        <description>Time value of metric in minutes:seconds</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Time value of metric in minutes:seconds</inlineHelpText>
+        <label>Time</label>
+        <length>5</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Value</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Site Metric</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Metric__c</columns>
+        <columns>Site_Metric_Date__c</columns>
+        <columns>Value__c</columns>
+        <columns>Display_Value__c</columns>
+        <columns>Time__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Site Metric Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Site Metrics</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Time_Format</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND (
+len(Time__c) &gt; 0,
+OR(
+NOT(ISNUMBER( LEFT( Time__c , 2) )), 
+NOT(CONTAINS(Time__c,&apos;:&apos;)), 
+NOT(ISNUMBER( RIGHT( Time__c , 2) )) 
+)
+)</errorConditionFormula>
+        <errorDisplayField>Time__c</errorDisplayField>
+        <errorMessage>Time must be in format mm:ss</errorMessage>
+    </validationRules>
+</CustomObject>

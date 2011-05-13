@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <customSettingsVisibility>Public</customSettingsVisibility>
+    <description>Settings used for import Google Analytics data for a Force.com Site</description>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Email__c</fullName>
+        <description>Email username for Google Analytics</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Email username for Google Analytics</inlineHelpText>
+        <label>Email</label>
+        <required>true</required>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Password__c</fullName>
+        <description>Password for Google Analytics account</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Password for Google Analytics account</inlineHelpText>
+        <label>Password</label>
+        <length>80</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Table_Id__c</fullName>
+        <description>Google Table Id for Site, ie. ga:123456</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Google Table Id for Site, ie. ga:123456</inlineHelpText>
+        <label>Table Id</label>
+        <length>20</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Site Metric Settings</label>
+</CustomObject>
