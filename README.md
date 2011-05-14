@@ -1,6 +1,9 @@
 Force.com Toolkit for Google Analytics
 ======================================  
 
+Installation
+------------
+
 For an easy, 1-click installation: [Force.com Toolkit for Google Analytics on Code Share](http://developer.force.com/codeshare/project/forcecom-toolkit-for-google-analytics).
 
 To use the source code with a Salesforce org: [How To Use Github and the Force.com IDE](http://blog.sforce.com/sforce/2011/04/how-to-use-git-github-force-com-ide-open-source-labs-apps.html)
@@ -49,6 +52,11 @@ where name is a string with the name of the Custom Settings you created in Setup
 
 The result should be a series of Site Metric Date, Site Metric, and Site Event records.
 You may need to adjust the dates in ImportGoogleAnalytics to match activity dates for your site.    
+
+Help and Discussion
+-------------------
+
+For help and discussion, please use the project's [Google Group](http://groups.google.com/group/forcecom-toolkit-for-google-analytics).         
 
 References
 ----------   
