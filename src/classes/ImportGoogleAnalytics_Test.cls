@@ -18,6 +18,10 @@
 private class ImportGoogleAnalytics_Test {
 	static string siteMetricSettingsName = 'Test';
 	
+	static {
+		insert new Site_Metric_Settings__c(Name='Test', Email__c='test@test.com', Password__c='test', Table_Id__c='test');
+	}
+	
 	static testMethod void importSingleMetricSavesMetrics() {
 		ImportGoogleAnalytics.importSingleMetric(siteMetricSettingsName);
 		System.assert([select count() from Site_Metric__c where Name = :ImportGoogleAnalytics.singleMetricName] > 0);
