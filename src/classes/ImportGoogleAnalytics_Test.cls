@@ -16,7 +16,7 @@
 
 @isTest
 private class ImportGoogleAnalytics_Test {
-	static string siteMetricSettingsName = 'Test';
+	static string siteMetricSettingsName = 'MyBlog';
 	
 	static testMethod void importSingleMetricSavesMetrics() {
 		ImportGoogleAnalytics.importSingleMetric(siteMetricSettingsName);

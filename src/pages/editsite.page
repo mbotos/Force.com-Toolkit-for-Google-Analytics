@@ -1,0 +1,24 @@
+<apex:page controller="AnalyticSettingsController">
+   <apex:form >
+      <apex:pageBlock title="Edit Site Info" mode="edit" id="block">
+         <apex:pageMessages />
+         <apex:pageBlockButtons >
+           <apex:commandButton value="Save" action="{!save}" />
+           <apex:commandButton immediate="true"  value="Cancel" action="{!cancel}" />
+         </apex:pageBlockButtons>
+         <apex:pageBlockSection columns="2" title="Site Info">
+              <apex:inputField value="{!settings.Name}"/>
+              <apex:inputField value="{!settings.Email__c}"/>
+              <apex:inputField value="{!settings.Password__c}"/>
+              <apex:inputField value="{!settings.Table_Id__c}"/>
+        </apex:pageBlockSection>
+         <apex:pageBlockSection columns="2" title="Site Metrics">
+              <apex:inputField value="{!settings.Track_Visitors__c}"/>
+              <apex:inputField value="{!settings.Track_New_Visits__c}"/>
+              <apex:inputField value="{!settings.Track_Page_Views_Per_Visit__c}"/>
+              <apex:inputField value="{!settings.Average_Time_on_Site__c}"/>
+              <apex:inputField value="{!settings.Track_Visit_Bounce_Rate__c}"/>
+        </apex:pageBlockSection>
+      </apex:pageBlock>
+   </apex:form>
+</apex:page>

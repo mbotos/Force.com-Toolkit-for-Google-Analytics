@@ -1,28 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>*</members>
+        <members>AnalyticSettingsController</members>
+        <members>AnalyticSettingsController_Test</members>
+        <members>DataImportWorker</members>
+        <members>DataImportWorker_Test</members>
+        <members>GoogleAnalytics</members>
+        <members>GoogleAnalyticsImporter</members>
+        <members>GoogleAnalyticsImporter_Test</members>
+        <members>GoogleAnalyticsTest</members>
+        <members>ImportGoogleAnalytics</members>
+        <members>ImportGoogleAnalytics_Test</members>
+        <members>MetricsData</members>
+        <members>MetricsData_Test</members>
+        <members>SiteMetricTime_Test</members>
+        <members>UtilityClass</members>
         <name>ApexClass</name>
     </types>
     <types>
-        <members>*</members>
-        <name>ApexComponent</name>
-    </types>
-    <types>
-        <members>*</members>
+        <members>analyticsSettings</members>
+        <members>editsite</members>
         <name>ApexPage</name>
     </types>
     <types>
-        <members>*</members>
+        <members>SiteMetric_Time</members>
         <name>ApexTrigger</name>
     </types>
     <types>
-        <members>*</members>
+        <members>Site_Event__c</members>
+        <members>Site_Metric_Date__c</members>
+        <members>Site_Metric_Settings__c</members>
+        <members>Site_Metric__c</members>
         <name>CustomObject</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>StaticResource</name>
     </types>
     <version>20.0</version>
 </Package>

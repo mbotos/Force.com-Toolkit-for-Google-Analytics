@@ -373,6 +373,43 @@ public with sharing class GoogleAnalytics {
 		}
 	}
 
+	/* This method returns metrics which will be accumulated in the client for insertion
+	*/
+	public MetricsData getMetrics(Date startDate, Date endDate, list<string> metrics) {
+		MetricsData metricsData;
+		list<GoogleAnalytics.Entry> entries = getEntries(
+				startDate, 
+				endDate, 
+				new list<string>{DateDimension}, 
+				metrics
+			);
+			
+		map<Date, Site_Metric_Date__c> metricDates = new map<Date, Site_Metric_Date__c>();
+		map<Date, list<Site_Metric__c>> metricsMap = new map<Date, list<Site_Metric__c>>();
+		
+		for (GoogleAnalytics.Entry entry : entries) {
+			Date metricDate = GoogleAnalytics.parseDate(entry.getDimension(DateDimension));
+			metricDates.put(metricDate, new Site_Metric_Date__c(Start_Date__c = metricDate));
+			
+			if (!metricsMap.containsKey(metricDate)) {
+				metricsMap.put(metricDate, new list<Site_Metric__c>());
+			}
+			
+			for (string gaMetric : metrics) {
+				Site_Metric__c metric = new Site_Metric__c(Name = gaMetric, Metric__c = gaMetric, Value__c = decimal.ValueOf(entry.getMetric(gaMetric)));				
+				metricsMap.get(metricDate).add(metric);
+			}
+		}
+
+		if (metricsMap != null) {	
+			metricsData = new MetricsData();
+			metricsData.metricDates = metricDates;
+			metricsData.metricsMap = metricsMap;
+		}
+		
+		return (metricsData);
+	}
+
 	public static Date parseDate(string dt) {			
 		if(dt != null && dt.length() == 8){
 			return Date.newInstance(
