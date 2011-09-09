@@ -6,6 +6,14 @@
     <enableEnhancedLookup>false</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <fields>
+        <fullName>Average_Time_on_Site__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Select if you want to track average time spent on the site per visit.</inlineHelpText>
+        <label>Track Average Time on Site</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Email__c</fullName>
         <description>Email username for Google Analytics</description>
         <externalId>false</externalId>
@@ -36,6 +44,78 @@
         <required>true</required>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Track_New_Visits__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Select if you want to track percentage of new visits.</inlineHelpText>
+        <label>Track New Visits %</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Track_Page_Views_Per_Visit__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Select if you want to track page views per visit.</inlineHelpText>
+        <label>Track Page Views Per Visit</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Track_Visit_Bounce_Rate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Select if you want to track visit bounce rate.</inlineHelpText>
+        <label>Track Visit Bounce Rate</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Track_Visitors__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Select if you want to track visitors to your site.</inlineHelpText>
+        <label>Track Visitors</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Tracking_Average_Time_on_Site__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This is an internal field to determine if we need to pull just the day&apos;s Google Analytics data or last 30 day&apos;s worth Google Analytics data.</description>
+        <externalId>false</externalId>
+        <label>Tracking Average Time on Site</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Tracking_New_Visits__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This is an internal field to determine if we need to pull just the day&apos;s Google Analytics data or last 30 day&apos;s worth Google Analytics data.</description>
+        <externalId>false</externalId>
+        <label>Tracking New Visits %</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Tracking_Page_Views_Per_Visit__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This is an internal field to determine if we need to pull just the day&apos;s Google Analytics data or last 30 day&apos;s worth Google Analytics data.</description>
+        <externalId>false</externalId>
+        <label>Tracking Page Views Per Visit</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Tracking_Visit_Bounce_Rate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This is an internal field to determine if we need to pull just the day&apos;s Google Analytics data or last 30 day&apos;s worth Google Analytics data.</description>
+        <externalId>false</externalId>
+        <label>Tracking Visit Bounce Rate</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Tracking_Visitors__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This is an internal field to determine if we need to pull just the day&apos;s Google Analytics data or last 30 day&apos;s worth Google Analytics data.</description>
+        <externalId>false</externalId>
+        <label>Tracking Visitors</label>
+        <type>Checkbox</type>
     </fields>
     <label>Site Metric Settings</label>
 </CustomObject>

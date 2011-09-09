@@ -1,0 +1,64 @@
+<apex:page controller="AnalyticSettingsController">
+   <apex:form >
+      <apex:pageBlock mode="edit" id="block">
+         <apex:pageMessages />
+         <apex:pageBlockSection title="Manage Sites">
+            <apex:pageBlockSectionItem >
+               <apex:panelGroup >
+                  <apex:outputLabel for="siteName">Site Name</apex:outputLabel>
+                  <apex:inputText id="siteName" value="{!siteName}"/>
+                  <br/>
+                  <apex:commandButton value="Search" action="{!searchSites}" 
+                                      rerender="block" status="searchStatus"/>
+                  <apex:commandButton value="View" action="{!getSiteInfo}" 
+                                      rerender="block" status="status"/>
+                  <apex:commandButton value="Edit / New" action="{!editSite}" />
+               </apex:panelGroup>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+        <apex:actionStatus id="searchStatus" startText="searching..."/>
+        <apex:pageBlockSection title="Available Sites" id="availableSites" columns="1">
+           <apex:pageBlockTable value="{!sites}" var="site" 
+                               rendered="{!NOT(ISNULL(sites))}">
+              <apex:column headerValue="Site Name">
+                <apex:commandLink value="{!site.Name}" action="{!getSiteInfo}">
+                  <apex:param name="siteName" value="{!site.Name}" assignTo="{!siteName}"/>
+                </apex:commandLink>
+              </apex:column>
+           </apex:pageBlockTable>
+        </apex:pageBlockSection>
+        <apex:actionStatus id="status" startText="requesting..."/>
+        <apex:pageBlockSection title="Site Info" id="siteInfo" columns="1">
+
+           <apex:pageBlockTable value="{!settings}" var="siteSetting" 
+                               rendered="{!NOT(ISNULL(settings))}">
+              <apex:column value="{!siteSetting.Name}"/>
+              <apex:column value="{!siteSetting.Email__c}"/>
+              <apex:column value="{!siteSetting.Password__c}"/>
+              <apex:column value="{!siteSetting.Table_Id__c}"/>
+           </apex:pageBlockTable>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Site Metrics" id="siteMetrics" columns="1">
+           <apex:pageBlockTable value="{!settings}" var="siteMetrics" 
+                               rendered="{!NOT(ISNULL(settings))}">
+               <apex:column value="{!siteMetrics.Track_Visitors__c}"/>
+               <apex:column value="{!siteMetrics.Track_New_Visits__c}"/>
+               <apex:column value="{!siteMetrics.Track_Page_Views_Per_Visit__c}"/>
+               <apex:column value="{!siteMetrics.Average_Time_on_Site__c}"/>
+               <apex:column value="{!siteMetrics.Track_Visit_Bounce_Rate__c}"/>
+           </apex:pageBlockTable>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection title="Tracking Status" id="siteTrackingStatus" columns="1">
+           <apex:pageBlockTable value="{!settings}" var="siteTrackingStatus" 
+                               rendered="{!NOT(ISNULL(settings))}">
+               <apex:column value="{!siteTrackingStatus.Tracking_Visitors__c}"/>
+               <apex:column value="{!siteTrackingStatus.Tracking_New_Visits__c}"/>
+               <apex:column value="{!siteTrackingStatus.Tracking_Page_Views_Per_Visit__c}"/>
+               <apex:column value="{!siteTrackingStatus.Tracking_Average_Time_on_Site__c}"/>
+               <apex:column value="{!siteTrackingStatus.Tracking_Visit_Bounce_Rate__c}"/>
+           </apex:pageBlockTable>
+        </apex:pageBlockSection>
+
+      </apex:pageBlock>
+   </apex:form>
+</apex:page>

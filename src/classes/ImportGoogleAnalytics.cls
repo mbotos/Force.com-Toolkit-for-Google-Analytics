@@ -38,10 +38,14 @@ public with sharing class ImportGoogleAnalytics {
 	
 	public static void importDailyMetrics(string siteMetricSettingsName) {
 		if(initialize(siteMetricSettingsName)) {		
-			Date startDate = Date.newInstance(2011, 2, 1);
-			Date endDate = Date.newInstance(2011, 2, 28);
+			Date startDate = Date.newInstance(2011, 8, 19);
+			Date endDate = Date.newInstance(2011, 8, 19);
 		
-			ga.insertDailyMetrics(startDate, endDate, new list<String>{GoogleAnalytics.VisitorsMetric});
+			ga.insertDailyMetrics(startDate, endDate, new list<String>{GoogleAnalytics.VisitorsMetric,
+										GoogleAnalytics.PageViewsPerVisitMetric,
+										GoogleAnalytics.PercentNewVisitsMetric,
+										GoogleAnalytics.VisitBounceRateMetric,
+										GoogleAnalytics.AverageTimeOnSiteMetric});
 		}
 	}
 	

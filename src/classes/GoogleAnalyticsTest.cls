@@ -77,4 +77,23 @@ private class GoogleAnalyticsTest {
         System.assertEquals('/hcpHome', entries[0].getDimension('ga:pagePath'));
         System.assertEquals('6', entries[0].getMetric('ga:pageviews'));
     }    
+    
+    static testMethod void testParseDate() {
+		Date dt = GoogleAnalytics.parseDate('20110824');
+		System.assertEquals(2011, dt.year());    	
+		System.assertEquals(8, dt.month());    	
+		System.assertEquals(24, dt.day());    	
+    }
+    
+    static testMethod void testGetMetrics() {
+    	List<String> metrics = new List<String>();
+    	metrics.add('ga:Visitors');
+    	MetricsData md = ga.getMetrics(Date.today() - 100, Date.today()-99, metrics);
+    }
+
+    static testMethod void insertDailyMetrics() {
+    	List<String> metrics = new List<String>();
+    	metrics.add('ga:Visitors');
+    	ga.insertDailyMetrics(Date.today() - 100, Date.today()-99, metrics);
+    }
 }
