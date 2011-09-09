@@ -16,7 +16,7 @@
 
 @isTest
 private class ImportGoogleAnalytics_Test {
-	static string siteMetricSettingsName = 'Test';
+	static string siteMetricSettingsName = 'MyBlog';
 	
 	static {
 		insert new Site_Metric_Settings__c(Name='Test', Email__c='test@test.com', Password__c='test', Table_Id__c='test');
