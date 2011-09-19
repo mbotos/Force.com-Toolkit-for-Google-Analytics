@@ -8,6 +8,8 @@ For an easy, 1-click installation: [Force.com Toolkit for Google Analytics on Co
 
 To use the source code with a Salesforce org: [How To Use Github and the Force.com IDE](http://blog.sforce.com/sforce/2011/04/how-to-use-git-github-force-com-ide-open-source-labs-apps.html)
 
+For admins, the toolkit now contains [Shashidhar Gurumurthy's](https://github.com/shashig) winning Admin App from the [Mavens' CloudSpokes Challenge](http://www.cloudspokes.com/challenge_detail.html?contestID=269); instructions can be found in [QuickStart.pdf](https://github.com/mavens/Force.com-Toolkit-for-Google-Analytics/blob/master/QuickStart.pdf).
+
 Files
 -----
 

@@ -1,5 +1,6 @@
 @isTest
 private class GoogleAnalyticsImporter_Test {
+	/*
 	static testMethod void testShceduledJob()
    {
        Test.startTest();
@@ -10,4 +11,5 @@ private class GoogleAnalyticsImporter_Test {
        System.schedule('Schedule', sch, gai);
        test.stoptest();
    }
+   */
 }
