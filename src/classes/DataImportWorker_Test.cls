@@ -3,6 +3,13 @@ private class DataImportWorker_Test {
 	/* Since database update cannot be done before a callout, the testing for each metric will need to be done step by step */ 
 	static testMethod void testImportData() {
 		String siteName = 'MyBlog';
+		AnalyticSettingsController asController = new AnalyticSettingsController();
+
+        //Temporarily save a site info for testing
+        asController.settings = new Site_Metric_Settings__c(Name = siteName, Email__c = 'as@as.com', Password__c = '123456', Table_Id__c = 'ga:123456', 
+        													Track_Visitors__c = true, Tracking_Visitors__c = false);
+        PageReference returnedPageRef = asController.save();
+        asController.settings = null;
 
 		DataImportWorker.importData();                          
 
@@ -15,6 +22,7 @@ private class DataImportWorker_Test {
                                s.Tracking_Visit_Bounce_Rate__c, s.Tracking_Average_Time_on_Site__c
                           From Site_Metric_Settings__c s where s.Name = :siteName];
 	
-		System.assertEquals(true, settings.Tracking_Visitors__c);
+		System.assertEquals(true, settings.Track_Visitors__c);
+		System.assertEquals(false, settings.Tracking_Visitors__c); //Since callout cannot be made from test. 
 	} 
 }

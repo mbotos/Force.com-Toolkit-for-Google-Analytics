@@ -60,9 +60,24 @@ private class AnalyticSettingsController_Test {
         returnedPageRef = asController.getSiteInfo();
         System.assertEquals(asController.settings, null);
 
-        asController.siteName = 'MyBlog';
+        //Temporarily save a site info for testing
+        String siteName = 'MySite';
+        asController.settings = new Site_Metric_Settings__c(Name = siteName, Email__c = 'as@as.com', Password__c = '123', Table_Id__c = 'ga:123456');
+        returnedPageRef = asController.save();
+        asController.settings = null;
+
+        //Verify that the settings are retrieved properly
+        asController.siteName = 'MySite';
         returnedPageRef = asController.getSiteInfo();
-        System.assertNotEquals(asController.settings, null);
+        System.assertNotEquals(null, asController.settings);
+        System.assertEquals('123', asController.settings.Password__c);
+        
+        //Delete the settings record
+        Site_Metric_Settings__c tempSettings = asController.settings;
+        try {
+            delete(tempSettings);
+        } catch(System.DMLException e) {
+        }
     }
     
     static testMethod void testSearchSites() { 
@@ -73,13 +88,19 @@ private class AnalyticSettingsController_Test {
         PageReference returnedPageRef = asController.searchSites();
         System.assertEquals(0, asController.sites.size());
 
-        //One value with no criteria (as there is only one site defined in the database)
-        asController.siteName = '';
-        returnedPageRef = asController.searchSites();
-        System.assertEquals(1, asController.sites.size());
+        //Temporarily save a site info for testing
+        String siteName = 'MyBlog';
+        asController.settings = new Site_Metric_Settings__c(Name = siteName, Email__c = 'as@as.com', Password__c = '123', Table_Id__c = 'ga:123456');
+        returnedPageRef = asController.save();
+        asController.settings = null;
 
         //One value with correct criteria
         asController.siteName = 'MyBlog';
+        returnedPageRef = asController.searchSites();
+        System.assertEquals(1, asController.sites.size());
+        
+        //One value with no criteria (as there is only one site defined in the database)
+        asController.siteName = '';
         returnedPageRef = asController.searchSites();
         System.assertEquals(1, asController.sites.size());
     }

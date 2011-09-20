@@ -19,16 +19,34 @@ private class ImportGoogleAnalytics_Test {
 	static string siteMetricSettingsName = 'MyBlog';
 	
 	static testMethod void importSingleMetricSavesMetrics() {
+        //Temporarily save a site info for testing
+   	    AnalyticSettingsController asController = new AnalyticSettingsController();
+        asController.settings = new Site_Metric_Settings__c(Name = siteMetricSettingsName, Email__c = 'as@as.com', Password__c = '123', Table_Id__c = 'ga:123456');
+        PageReference returnedPageRef = asController.save();
+        asController.settings = null;
+
 		ImportGoogleAnalytics.importSingleMetric(siteMetricSettingsName);
 		System.assert([select count() from Site_Metric__c where Name = :ImportGoogleAnalytics.singleMetricName] > 0);
 	}
 
 	static testMethod void importDailyMetricsSavesMetrics() {
+        //Temporarily save a site info for testing
+   	    AnalyticSettingsController asController = new AnalyticSettingsController();
+        asController.settings = new Site_Metric_Settings__c(Name = siteMetricSettingsName, Email__c = 'as@as.com', Password__c = '123', Table_Id__c = 'ga:123456');
+        PageReference returnedPageRef = asController.save();
+        asController.settings = null;
+
 		ImportGoogleAnalytics.importDailyMetrics(siteMetricSettingsName);
 		System.assert([select count() from Site_Metric__c] > 0);
 	}
 	
 	static testMethod void importEventsSavesEvents() {
+        //Temporarily save a site info for testing
+   	    AnalyticSettingsController asController = new AnalyticSettingsController();
+        asController.settings = new Site_Metric_Settings__c(Name = siteMetricSettingsName, Email__c = 'as@as.com', Password__c = '123', Table_Id__c = 'ga:123456');
+        PageReference returnedPageRef = asController.save();
+        asController.settings = null;
+
 		ImportGoogleAnalytics.importEvents(siteMetricSettingsName);
 		System.assert([select count() from Site_Event__c] > 0);		
 	}
