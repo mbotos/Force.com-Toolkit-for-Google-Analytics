@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>AnalyticSettingsController</members>
@@ -14,7 +14,6 @@
         <members>MetricsData</members>
         <members>MetricsData_Test</members>
         <members>SiteMetricTime_Test</members>
-        <members>UtilityClass</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -27,11 +26,32 @@
         <name>ApexTrigger</name>
     </types>
     <types>
+        <members>Google_Analytics_Challenge</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
         <members>Site_Event__c</members>
         <members>Site_Metric_Date__c</members>
         <members>Site_Metric_Settings__c</members>
         <members>Site_Metric__c</members>
         <name>CustomObject</name>
     </types>
+    <types>
+        <members>*</members>
+        <name>DataCategoryGroup</name>
+    </types>
+    <types>
+        <members>Admin</members>
+        <name>Profile</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ReportType</name>
+    </types>
+    <types>
+        <members>unfiled$public</members>
+        <name>Report</name>
+    </types>
     <version>20.0</version>
 </Package>
+
