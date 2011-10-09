@@ -89,6 +89,7 @@
         <label>User</label>
         <referenceTo>User</referenceTo>
         <relationshipName>Site_Events</relationshipName>
+        <required>false</required>
         <type>Lookup</type>
     </fields>
     <label>Site Event</label>
