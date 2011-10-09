@@ -37,6 +37,11 @@
         <name>CustomObject</name>
     </types>
     <types>
+        <members>Site_Analytics</members>
+        <members>Site_Analytics/Site_Analytics</members>
+        <name>Dashboard</name>
+    </types>
+    <types>
         <members>*</members>
         <name>DataCategoryGroup</name>
     </types>
@@ -45,6 +50,16 @@
         <name>Profile</name>
     </types>
     <types>
+        <members>Google</members>
+        <name>RemoteSiteSetting</name>
+    </types>
+    <types>
+        <members>Site_Analytics</members>
+        <members>Site_Analytics/Average_Time_on_Site</members>
+        <members>Site_Analytics/New_Visits</members>
+        <members>Site_Analytics/Page_Views_per_Visit</members>
+        <members>Site_Analytics/Visit_Bounce_Rate</members>
+        <members>Site_Analytics/Visitors</members>
         <members>unfiled$public</members>
         <name>Report</name>
     </types>
