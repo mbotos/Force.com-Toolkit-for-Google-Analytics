@@ -15,7 +15,7 @@
         <members>MetricsData_Test</members>
         <members>SiteMetricTime_Test</members>
         <name>ApexClass</name>
-    </types>
+    </types> 
     <types>
         <members>analyticsSettings</members>
         <members>editsite</members>
@@ -26,7 +26,7 @@
         <name>ApexTrigger</name>
     </types>
     <types>
-        <members>Google_Analytics_Challenge</members>
+        <members>Google_Analytics</members>
         <name>CustomApplication</name>
     </types>
     <types>
@@ -35,6 +35,10 @@
         <members>Site_Metric_Settings__c</members>
         <members>Site_Metric__c</members>
         <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Manage_Site_Settings</members>
+        <name>CustomTab</name>
     </types>
     <types>
         <members>Site_Analytics</members>

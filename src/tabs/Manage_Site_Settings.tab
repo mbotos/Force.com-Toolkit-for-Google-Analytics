@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This tab allows the user to manage the site settings for Google Analytics data collections. User can also select which metrics to choose for data collection. When a metric is chosen for the first time, 30 days worth of data is collected for the metric. Subsequently, only incremental data is collected for the metric.</description>
+    <label>Manage Site Settings</label>
+    <mobileReady>false</mobileReady>
+    <motif>Custom29: PDA</motif>
+    <page>analyticsSettings</page>
+</CustomTab>
