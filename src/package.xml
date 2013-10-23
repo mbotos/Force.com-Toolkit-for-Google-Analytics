@@ -15,7 +15,7 @@
         <members>MetricsData_Test</members>
         <members>SiteMetricTime_Test</members>
         <name>ApexClass</name>
-    </types> 
+    </types>
     <types>
         <members>analyticsSettings</members>
         <members>editsite</members>
@@ -71,5 +71,5 @@
         <members>*</members>
         <name>ReportType</name>
     </types>
-    <version>20.0</version>
+    <version>25.0</version>
 </Package>

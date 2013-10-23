@@ -16,13 +16,13 @@
 
 public with sharing class ImportGoogleAnalytics {
 	public static GoogleAnalytics ga;
-	public static string singleMetricName = 'Test Single Metric';
+	public static string singleMetricName = 'Visitors';
 	
 	public static void importSingleMetric(string siteMetricSettingsName) {
 		if(initialize(siteMetricSettingsName)) {	
 			
-			Site_Metric_Date__c metricDate = new Site_Metric_Date__c(Name = '2011 Q1', Start_Date__c = Date.newInstance(2011,1,1), 
-				End_Date__c = Date.newInstance(2011,3,31));
+			Site_Metric_Date__c metricDate = new Site_Metric_Date__c(Name = Date.today().format(), Start_Date__c = Date.today().addDays(-3), 
+				End_Date__c = Date.today().addDays(-2));
 				
 			GoogleAnalytics.Entry entry = ga.getEntry(metricDate, new list<String>{GoogleAnalytics.VisitorsMetric});
 			

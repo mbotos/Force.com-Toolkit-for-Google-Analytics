@@ -258,23 +258,21 @@ public with sharing class GoogleAnalytics {
 	}
 	
 	public static HttpRequest createRequest(string token, Date startDate, Date endDate, list<string> dimensions, list<string> metrics, string filter, string id, integer maxResults, integer startIndex) {
-		if (dimensions == null) {
-			dimensions = new list<string>();
-		}
-		if (filter == null) {
-			filter = '';
-		}
 		System.debug('filter: ' + filter);
 		
 	    HttpRequest req = new HttpRequest();
 	    string endpoint = 'https://www.google.com/analytics/feeds/data' +
 		    '?start-date=' + GoogleAnalytics.formatDate(startDate) + 
 		    '&end-date=' + GoogleAnalytics.formatDate(endDate) +
-		    '&dimensions=' + join(dimensions, ',') + 
 		    '&metrics=' + join(metrics, ',') + 
-		    '&filters=' + filter +
 		    '&prettyprint=true' +
 		    '&ids=' + id;
+		if (dimensions != null) {
+		    endpoint += '&dimensions=' + join(dimensions, ',');			
+		}
+		if (filter != null) {
+		    endpoint += '&filters=' + filter;
+		}		
 	    if (maxResults != null) {
 	    	endpoint += '&max-results=' + maxResults;
 	    }
